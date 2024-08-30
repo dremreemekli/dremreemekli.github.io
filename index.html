@@ -5,10 +5,10 @@
 
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="Publications - Emre Emekli">
+    <meta name="description" content="Emre Emekli Website">
     <meta name="author" content="Emre Emekli">
     <meta name="generator" content="Hugo 0.122.0">
-    <title>Publications - Emre Emekli, MD, PhD</title>
+    <title>Emre Emekli, MD, PhD</title>
 
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@docsearch/css@3">
     <link href="https://getbootstrap.com/docs/5.3/dist/css/bootstrap.min.css" rel="stylesheet">
@@ -105,22 +105,18 @@
         color: #000;
       }
 
-      /* Stil düzenlemeleri */
-      .publication-title {
-        font-weight: bold;
-        font-size: 1rem;
+      /* Biografi metni ve resim hizalaması için özel stiller */
+      .bio-section {
+        font-size: 0.875rem;
+        line-height: 1.5;
       }
 
-      .publication-authors {
-        margin-left: 20px;
-        font-size: 0.9rem;
-        color: #555;
-      }
-
-      .publication-description {
-        margin-left: 40px;
-        font-size: 0.85rem;
-        color: #333;
+      .bio-section img {
+        max-width: 200px;
+        height: auto;
+        margin-left: auto;
+        margin-right: auto;
+        display: block;
       }
     </style>
     
@@ -134,72 +130,99 @@
         <div class="collapse navbar-collapse" id="navbarNav">
           <ul class="navbar-nav">
             <li class="nav-item">
-              <a class="nav-link" href="index.html">Profile</a>
+              <a class="nav-link active" aria-current="page" href="index.html">Profile</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link active" aria-current="page" href="publications.html">Publications</a>
+              <a class="nav-link" href="publications.html">Publications</a>
             </li>
           </ul>
         </div>
       </div>
     </nav>
 
-    <div class="dropdown position-fixed bottom-0 end-0 mb-3 me-3 bd-mode-toggle">
-      <button class="btn btn-bd-primary py-2 dropdown-toggle d-flex align-items-center"
-              id="bd-theme"
-              type="button"
-              aria-expanded="false"
-              data-bs-toggle="dropdown"
-              aria-label="Toggle theme (auto)">
-        <svg class="bi my-1 theme-icon-active" width="1em" height="1em"><use href="#circle-half"></use></svg>
-        <span class="visually-hidden" id="bd-theme-text">Toggle theme</span>
-      </button>
-      <ul class="dropdown-menu dropdown-menu-end shadow" aria-labelledby="bd-theme-text">
-        <li>
-          <button type="button" class="dropdown-item d-flex align-items-center" data-bs-theme-value="light" aria-pressed="false">
-            <svg class="bi me-2 opacity-50" width="1em" height="1em"><use href="#sun-fill"></use></svg>
-            Light
-            <svg class="bi ms-auto d-none" width="1em" height="1em"><use href="#check2"></use></svg>
-          </button>
-        </li>
-        <li>
-          <button type="button" class="dropdown-item d-flex align-items-center" data-bs-theme-value="dark" aria-pressed="false">
-            <svg class="bi me-2 opacity-50" width="1em" height="1em"><use href="#moon-stars-fill"></use></svg>
-            Dark
-            <svg class="bi ms-auto d-none" width="1em" height="1em"><use href="#check2"></use></svg>
-          </button>
-        </li>
-        <li>
-          <button type="button" class="dropdown-item d-flex align-items-center active" data-bs-theme-value="auto" aria-pressed="true">
-            <svg class="bi me-2 opacity-50" width="1em" height="1em"><use href="#circle-half"></use></svg>
-            Auto
-            <svg class="bi ms-auto d-none" width="1em" height="1em"><use href="#check2"></use></svg>
-          </button>
-        </li>
-      </ul>
-    </div>
-
     <div class="col-lg-8 mx-auto p-4 py-md-5">
       <main>
-        <h1 class="text-body-emphasis">Publications</h1>
-        <p>Here you can find a list of my academic publications. Click on the titles to download the PDF files.</p>
-        <ul>
-          <li>
-            <p class="publication-title">
-              <a href="publication1.pdf" download>Publication Title 1</a>
-            </p>
-            <p class="publication-authors">John Doe, Jane Smith, Emre Emekli</p>
-            <p class="publication-description">This publication discusses the advanced techniques in radiology, focusing on the integration of AI in musculoskeletal imaging.</p>
-          </li>
-          <li>
-            <p class="publication-title">
-              <a href="publication2.pdf" download>Publication Title 2</a>
-            </p>
-            <p class="publication-authors">John Doe, Jane Smith, Emre Emekli</p>
-            <p class="publication-description">This research explores the methodologies for improving clinical record-keeping through educational interventions.</p>
-          </li>
-          <!-- Daha fazla yayın ekleyebilirsiniz -->
-        </ul>
+        <h1 class="text-body-emphasis">Emre Emekli</h1>
+        <div class="col-md-8">
+          <div class="row bio-section align-items-center">
+            <div class="col-md-6">
+              <p>
+                Dr. Emre Emekli is an Assistant Professor in the Department of Radiology at Eskişehir Osmangazi University. He has completed his doctoral studies in Medical Education at Gazi University. His expertise lies in musculoskeletal radiology, and he has a growing interest in the application of measurement and AI tools within medical education. Dr. Emekli remains dedicated to advancing post-graduate radiology education while actively contributing to improving clinical record-keeping education.
+              </p>
+            </div>
+            <div class="col-md-6 text-center">
+              <img src="emre-emekli.jpg" class="img-fluid" alt="Emre Emekli">
+            </div>
+          </div>
+        </div>
+      
+        <div class="mb-5">
+          <a href="mailto:eemekli@ogu.edu.tr?Subject=Contacting via your website" class="btn btn-primary btn-lg px-4">Contact</a>
+        </div>
+
+        <hr class="col-3 col-md-2 mb-5">
+
+        <div class="row g-5">
+          <div class="col-md-6">
+            <h2 class="text-body-emphasis">Links</h2>
+            <ul class="list-unstyled ps-0">
+              <li>
+                <a class="icon-link mb-1" href="https://orcid.org/0000-0001-5989-1897" rel="noopener" target="_blank">
+                  <svg class="bi" width="16" height="16"><use xlink:href="#arrow-right-circle"/></svg>
+                  ORCID
+                </a>
+              </li>
+              <li>
+                <a class="icon-link mb-1" href="https://avesis.ogu.edu.tr/2286" rel="noopener" target="_blank">
+                  <svg class="bi" width="16" height="16"><use xlink:href="#arrow-right-circle"/></svg>
+                 ESOGU Avesis
+                </a>
+              </li>
+              <li>
+                <a class="icon-link mb-1" href="https://www.webofscience.com/wos/author/record/2092292" rel="noopener" target="_blank">
+                  <svg class="bi" width="16" height="16"><use xlink:href="#arrow-right-circle"/></svg>
+                  Web of Science
+                </a>
+              </li>
+              <li>
+                <a class="icon-link mb-1" href="https://www.researchgate.net/profile/Emre-Emekli" rel="noopener" target="_blank">
+                  <svg class="bi" width="16" height="16"><use xlink:href="#arrow-right-circle"/></svg>
+                  ResearchGate
+                </a>
+              </li>
+            </ul>
+          </div>
+
+          <div class="col-md-6">
+            <h2 class="text-body-emphasis">Education</h2>
+            <ul class="list-unstyled ps-0">
+              <li>
+                <a class="icon-link mb-1" href="https://med.gazi.edu.tr/view/page/93695/medical-education-and-informatics">
+                  <svg class="bi" width="16" height="16"><use xlink:href="#arrow-right-circle"/></svg>
+                  Gazi University, Department of Medical Education (PhD)
+                </a>
+              </li>
+              <li>
+                <a class="icon-link mb-1" href="https://hukuk.anadolu.edu.tr/">
+                  <svg class="bi" width="16" height="16"><use xlink:href="#arrow-right-circle"/></svg>
+                  Anadolu University, Faculty of Law (LLB)
+                </a>
+              </li>
+              <li>
+                <a class="icon-link mb-1" href="https://tip.esogu.edu.tr/Sayfa/Index/114">
+                  <svg class="bi" width="16" height="16"><use xlink:href="#arrow-right-circle"/></svg>
+                  Eskişehir Osmangazi University, Department of Radiology 
+                </a>
+              </li>
+              <li>
+                <a class="icon-link mb-1" href="https://tip.hacettepe.edu.tr/">
+                  <svg class="bi" width="16" height="16"><use xlink:href="#arrow-right-circle"/></svg>
+                  Hacettepe University, Faculty of Medicine (MD)
+                </a>
+              </li>
+            </ul>
+          </div>
+        </div>
       </main>
       <footer class="pt-5 my-5 text-body-secondary border-top">
         Emre Emekli &middot; &copy; 2024
