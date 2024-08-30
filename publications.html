@@ -91,6 +91,20 @@
         display: block !important;
       }
 
+      .navbar {
+        transition: background-color 0.3s, color 0.3s;
+      }
+
+      [data-bs-theme="dark"] .navbar {
+        background-color: #343a40;
+        color: #fff;
+      }
+
+      [data-bs-theme="light"] .navbar {
+        background-color: #f8f9fa;
+        color: #000;
+      }
+
       /* Stil düzenlemeleri */
       .publication-title {
         font-weight: bold;
@@ -100,13 +114,13 @@
       .publication-authors {
         margin-left: 20px;
         font-size: 0.9rem;
-        color: #777;
+        color: #555;
       }
 
       .publication-description {
         margin-left: 40px;
-        font-size: 0.75rem;
-        color: #777;
+        font-size: 0.85rem;
+        color: #333;
       }
     </style>
     
@@ -130,6 +144,41 @@
       </div>
     </nav>
 
+    <div class="dropdown position-fixed bottom-0 end-0 mb-3 me-3 bd-mode-toggle">
+      <button class="btn btn-bd-primary py-2 dropdown-toggle d-flex align-items-center"
+              id="bd-theme"
+              type="button"
+              aria-expanded="false"
+              data-bs-toggle="dropdown"
+              aria-label="Toggle theme (auto)">
+        <svg class="bi my-1 theme-icon-active" width="1em" height="1em"><use href="#circle-half"></use></svg>
+        <span class="visually-hidden" id="bd-theme-text">Toggle theme</span>
+      </button>
+      <ul class="dropdown-menu dropdown-menu-end shadow" aria-labelledby="bd-theme-text">
+        <li>
+          <button type="button" class="dropdown-item d-flex align-items-center" data-bs-theme-value="light" aria-pressed="false">
+            <svg class="bi me-2 opacity-50" width="1em" height="1em"><use href="#sun-fill"></use></svg>
+            Light
+            <svg class="bi ms-auto d-none" width="1em" height="1em"><use href="#check2"></use></svg>
+          </button>
+        </li>
+        <li>
+          <button type="button" class="dropdown-item d-flex align-items-center" data-bs-theme-value="dark" aria-pressed="false">
+            <svg class="bi me-2 opacity-50" width="1em" height="1em"><use href="#moon-stars-fill"></use></svg>
+            Dark
+            <svg class="bi ms-auto d-none" width="1em" height="1em"><use href="#check2"></use></svg>
+          </button>
+        </li>
+        <li>
+          <button type="button" class="dropdown-item d-flex align-items-center active" data-bs-theme-value="auto" aria-pressed="true">
+            <svg class="bi me-2 opacity-50" width="1em" height="1em"><use href="#circle-half"></use></svg>
+            Auto
+            <svg class="bi ms-auto d-none" width="1em" height="1em"><use href="#check2"></use></svg>
+          </button>
+        </li>
+      </ul>
+    </div>
+
     <div class="col-lg-8 mx-auto p-4 py-md-5">
       <main>
         <h1 class="text-body-emphasis">Publications</h1>
@@ -144,10 +193,10 @@
           </li>
           <li>
             <p class="publication-title">
-              <a href="complicated_acut_ appendicitis.pdf" download>Complicated Acute Appendicitis Presenting as a Necrotizing Fasciitis of the Abdominal Wall: A Case Report </a>
+              <a href="publication2.pdf" download>Publication Title 2</a>
             </p>
-            <p class="publication-authors">Betül Tiryaki Baştuğ, Berkay Subaşı, Emre Emekli, Kübra Parpucu, Mahmut Kebapçı</p>
-            <p class="publication-description">This case report describes a rare complication of acute appendicitis, where it progressed to necrotizing fasciitis of the abdominal wall. A 50-year-old male presented with a week-long history of severe right-sided abdominal pain. The patient’s condition rapidly worsened, showing signs of leukocytosis and acute kidney injury. CT scans revealed fluid and gas collections in the abdominal wall and inflammation around the right colon. An emergency laparotomy discovered that the appendicitis had perforated, leading to a necrotizing soft tissue infection. This case underscores the importance of early recognition and prompt surgical intervention in managing this rare but life-threatening complication.</p>
+            <p class="publication-authors">John Doe, Jane Smith, Emre Emekli</p>
+            <p class="publication-description">This research explores the methodologies for improving clinical record-keeping through educational interventions.</p>
           </li>
           <!-- Daha fazla yayın ekleyebilirsiniz -->
         </ul>
