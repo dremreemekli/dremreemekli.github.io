@@ -90,6 +90,24 @@
       .bd-mode-toggle .dropdown-menu .active .bi {
         display: block !important;
       }
+
+      /* Stil düzenlemeleri */
+      .publication-title {
+        font-weight: bold;
+        font-size: 1rem;
+      }
+
+      .publication-authors {
+        margin-left: 20px;
+        font-size: 0.9rem;
+        color: #555;
+      }
+
+      .publication-description {
+        margin-left: 40px;
+        font-size: 0.85rem;
+        color: #333;
+      }
     </style>
     
   </head>
@@ -118,12 +136,20 @@
         <p>Here you can find a list of my academic publications. Click on the titles to download the PDF files.</p>
         <ul>
           <li>
-            <a href="publication1.pdf" download>Publication Title 1</a> - A brief description of Publication 1.
+            <p class="publication-title">
+              <a href="publication1.pdf" download>Publication Title 1</a>
+            </p>
+            <p class="publication-authors">John Doe, Jane Smith, Emre Emekli</p>
+            <p class="publication-description">This publication discusses the advanced techniques in radiology, focusing on the integration of AI in musculoskeletal imaging.</p>
           </li>
           <li>
-            <a href="complicated_acute_appendicitis.pdf" download>Complicated Acute Appendicitis Presenting as a Necrotizing Fasciitis of the Abdominal Wall: A Case Report 2</a> - This case report describes a rare complication of acute appendicitis, where it progressed to necrotizing fasciitis of the abdominal wall. A 50-year-old male presented with a week-long history of severe right-sided abdominal pain. The patient’s condition rapidly worsened, showing signs of leukocytosis and acute kidney injury. CT scans revealed fluid and gas collections in the abdominal wall and inflammation around the right colon. An emergency laparotomy discovered that the appendicitis had perforated, leading to a necrotizing soft tissue infection. This case underscores the importance of early recognition and prompt surgical intervention in managing this rare but life-threatening complication.
+            <p class="publication-title">
+              <a href="publication2.pdf" download>Publication Title 2</a>
+            </p>
+            <p class="publication-authors">John Doe, Jane Smith, Emre Emekli</p>
+            <p class="publication-description">This research explores the methodologies for improving clinical record-keeping through educational interventions.</p>
           </li>
-          <!-- Add more publications here -->
+          <!-- Daha fazla yayın ekleyebilirsiniz -->
         </ul>
       </main>
       <footer class="pt-5 my-5 text-body-secondary border-top">
@@ -133,4 +159,3 @@
     <script src="https://getbootstrap.com/docs/5.3/dist/js/bootstrap.bundle.min.js"></script>
   </body>
 </html>
-
