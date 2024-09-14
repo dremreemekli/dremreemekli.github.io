@@ -2,7 +2,6 @@
 <html lang="en" data-bs-theme="auto">
   <head>
     <script src="https://getbootstrap.com/docs/5.3/assets/js/color-modes.js"></script>
-
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="Educations - Emre Emekli">
@@ -47,14 +46,19 @@
       /* Metin renklerini temaya göre değiştirmek için medya sorgusu */
       @media (prefers-color-scheme: dark) {
         .timeline-content a {
-          color: #ffffff;
+          color: #000000; /* Siyah temada siyah */
         }
       }
 
       @media (prefers-color-scheme: light) {
         .timeline-content a {
-          color: #000000;
+          color: #ffffff; /* Açık temada beyaz */
         }
+      }
+
+      /* Filtrelenen alanlar */
+      .hidden {
+        display: none;
       }
     </style>
   </head>
@@ -141,5 +145,23 @@
     </div>
 
     <script src="https://getbootstrap.com/docs/5.3/dist/js/bootstrap.bundle.min.js"></script>
+    
+    <!-- Filtreleme İşlevselliği -->
+    <script>
+      document.getElementById('filterSelect').addEventListener('change', function() {
+        var filter = this.value;
+        var items = document.querySelectorAll('.timeline-item');
+        
+        items.forEach(function(item) {
+          if (filter === 'all') {
+            item.classList.remove('hidden');
+          } else if (item.classList.contains(filter.toLowerCase())) {
+            item.classList.remove('hidden');
+          } else {
+            item.classList.add('hidden');
+          }
+        });
+      });
+    </script>
   </body>
 </html>
