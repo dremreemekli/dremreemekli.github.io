@@ -136,7 +136,7 @@
               <a class="nav-link" href="publications.html">Publications</a>
             </li>
              <li class="nav-item">
-              <a class="nav-link" href="thesis.html">Thesis</a> <!-- Yeni eklenen sekme -->
+              <a class="nav-link" href="thesis.html">Thesis</a>
             </li>
           </ul>
         </div>
@@ -266,6 +266,33 @@
         Emre Emekli &middot; &copy; 2024
       </footer>
     </div>
+    
+    <!-- Otomatik tema değişikliği için script -->
+    <script>
+      const themeToggleBtn = document.getElementById('bd-theme');
+      const themeText = document.getElementById('bd-theme-text');
+      const systemTheme = window.matchMedia('(prefers-color-scheme: dark)');
+
+      // Tarayıcının sistem tercihini kontrol et
+      if (systemTheme.matches) {
+        document.documentElement.setAttribute('data-bs-theme', 'dark');
+        themeText.innerText = 'Dark';
+      } else {
+        document.documentElement.setAttribute('data-bs-theme', 'light');
+        themeText.innerText = 'Light';
+      }
+
+      // Kullanıcı tema tercihini değiştirdiğinde
+      systemTheme.addEventListener('change', (e) => {
+        if (e.matches) {
+          document.documentElement.setAttribute('data-bs-theme', 'dark');
+          themeText.innerText = 'Dark';
+        } else {
+          document.documentElement.setAttribute('data-bs-theme', 'light');
+          themeText.innerText = 'Light';
+        }
+      });
+    </script>
     <script src="https://getbootstrap.com/docs/5.3/dist/js/bootstrap.bundle.min.js"></script>
   </body>
 </html>
