@@ -58,14 +58,37 @@
         border-radius: 0.5rem;
       }
 
+      /* Temaya göre arka plan ve yazı renkleri */
       @media (prefers-color-scheme: dark) {
-        .timeline-icon {
-          background-color: #ffffff;
-        }
-        .timeline-content {
-          background-color: #1e1e1e;
+        body {
+          background-color: #333333;
           color: #ffffff;
         }
+        .timeline-content {
+          background-color: #4a4a4a; /* Arka plan gri */
+          color: #ffffff; /* Yazılar beyaz */
+        }
+        .univ-info p {
+          color: #ffffff; /* Yazılar beyaz */
+        }
+      }
+
+      @media (prefers-color-scheme: light) {
+        body {
+          background-color: #ffffff;
+          color: #000000;
+        }
+        .timeline-content {
+          background-color: #f8f9fa; /* Arka plan beyaz */
+          color: #000000; /* Yazılar siyah */
+        }
+        .univ-info p {
+          color: #6c757d; /* Açık temada gri metin */
+        }
+      }
+
+      .hidden {
+        display: none;
       }
     </style>
   </head>
@@ -97,9 +120,19 @@
         <h1 class="text-body-emphasis">Educations</h1>
         <p>Here you can find a list of my educations and trainings.</p>
 
+        <div class="mb-4">
+          <label for="filterSelect" class="form-label">Filter by Field:</label>
+          <select id="filterSelect" class="form-select">
+            <option value="all">Tüm Alanlar</option>
+            <option value="saglik">Sağlık</option>
+            <option value="hukuk">Hukuk</option>
+            <option value="egitim">Eğitim</option>
+          </select>
+        </div>
+
         <div class="timeline">
           <!-- Doktora -->
-          <div class="timeline-item">
+          <div class="timeline-item egitim">
             <div class="timeline-content d-flex align-items-center">
               <div class="timeline-icon">
                 <img src="gazi-logo.png" alt="Gazi Üniversitesi" class="univ-logo">
@@ -114,7 +147,7 @@
           </div>
 
           <!-- Lisans 1 -->
-          <div class="timeline-item">
+          <div class="timeline-item saglik">
             <div class="timeline-content d-flex align-items-center">
               <div class="timeline-icon">
                 <img src="ataturk-logo.png" alt="Atatürk Üniversitesi" class="univ-logo">
@@ -129,7 +162,7 @@
           </div>
 
           <!-- Yüksek Lisans -->
-          <div class="timeline-item">
+          <div class="timeline-item egitim">
             <div class="timeline-content d-flex align-items-center">
               <div class="timeline-icon">
                 <img src="anadolu-logo.png" alt="Anadolu Üniversitesi" class="univ-logo">
@@ -144,7 +177,7 @@
           </div>
 
           <!-- Ön Lisans 1 -->
-          <div class="timeline-item">
+          <div class="timeline-item egitim">
             <div class="timeline-content d-flex align-items-center">
               <div class="timeline-icon">
                 <img src="anadolu-logo.png" alt="Anadolu Üniversitesi" class="univ-logo">
@@ -159,11 +192,28 @@
           </div>
 
           <!-- Diğer Eğitimler -->
-          <!-- Lisans 2, Ön Lisans 2, Tıpta Uzmanlık ve diğer eğitimleri burada devam ettirebilirsiniz -->
         </div>
       </main>
     </div>
 
     <script src="https://getbootstrap.com/docs/5.3/dist/js/bootstrap.bundle.min.js"></script>
+    
+    <!-- Filtreleme İşlevselliği -->
+    <script>
+      document.getElementById('filterSelect').addEventListener('change', function() {
+        var filter = this.value;
+        var items = document.querySelectorAll('.timeline-item');
+        
+        items.forEach(function(item) {
+          if (filter === 'all') {
+            item.classList.remove('hidden');
+          } else if (item.classList.contains(filter.toLowerCase())) {
+            item.classList.remove('hidden');
+          } else {
+            item.classList.add('hidden');
+          }
+        });
+      });
+    </script>
   </body>
 </html>
