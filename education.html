@@ -51,7 +51,7 @@
       }
 
       [data-bs-theme="dark"] .univ-info {
-        color: #bbb; /* Dark mod için daha koyu bir renk */
+        color: #444; /* Dark mod için çok daha koyu bir renk */
       }
 
       .courses-list, .qualification-list {
@@ -59,16 +59,30 @@
         padding-left: 0;
       }
 
-      .course-item {
-        margin-bottom: 10px;
-      }
-
-      .qualification-item {
+      .course-item, .qualification-item {
         margin-bottom: 10px;
       }
 
       .sub-section-title {
         margin-top: 40px;
+      }
+
+      /* Dark modda kontrast butonu ayarı */
+      .btn-bd-primary {
+        --bd-violet-bg: #712cf9;
+        --bd-violet-rgb: 112.520718, 44.062154, 249.437846;
+
+        --bs-btn-font-weight: 600;
+        --bs-btn-color: var(--bs-white);
+        --bs-btn-bg: var(--bd-violet-bg);
+        --bs-btn-border-color: var(--bd-violet-bg);
+        --bs-btn-hover-color: var(--bs-white);
+        --bs-btn-hover-bg: #6528e0;
+        --bs-btn-hover-border-color: #6528e0;
+        --bs-btn-focus-shadow-rgb: var(--bd-violet-rgb);
+        --bs-btn-active-color: var(--bs-btn-hover-color);
+        --bs-btn-active-bg: #5a23c8;
+        --bs-btn-active-border-color: #5a23c8;
       }
     </style>
   </head>
@@ -87,12 +101,48 @@
               <a class="nav-link active" aria-current="page" href="publications.html">Publications</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="thesis.html">Thesis</a> <!-- Yeni eklenen sekme -->
+              <a class="nav-link" href="thesis.html">Thesis</a>
             </li>
           </ul>
         </div>
       </div>
     </nav>
+
+    <!-- Kontrast Butonu -->
+    <div class="dropdown position-fixed bottom-0 end-0 mb-3 me-3 bd-mode-toggle">
+      <button class="btn btn-bd-primary py-2 dropdown-toggle d-flex align-items-center"
+              id="bd-theme"
+              type="button"
+              aria-expanded="false"
+              data-bs-toggle="dropdown"
+              aria-label="Toggle theme (auto)">
+        <svg class="bi my-1 theme-icon-active" width="1em" height="1em"><use href="#circle-half"></use></svg>
+        <span class="visually-hidden" id="bd-theme-text">Toggle theme</span>
+      </button>
+      <ul class="dropdown-menu dropdown-menu-end shadow" aria-labelledby="bd-theme-text">
+        <li>
+          <button type="button" class="dropdown-item d-flex align-items-center" data-bs-theme-value="light" aria-pressed="false">
+            <svg class="bi me-2 opacity-50" width="1em" height="1em"><use href="#sun-fill"></use></svg>
+            Light
+            <svg class="bi ms-auto d-none" width="1em" height="1em"><use href="#check2"></use></svg>
+          </button>
+        </li>
+        <li>
+          <button type="button" class="dropdown-item d-flex align-items-center" data-bs-theme-value="dark" aria-pressed="false">
+            <svg class="bi me-2 opacity-50" width="1em" height="1em"><use href="#moon-stars-fill"></use></svg>
+            Dark
+            <svg class="bi ms-auto d-none" width="1em" height="1em"><use href="#check2"></use></svg>
+          </button>
+        </li>
+        <li>
+          <button type="button" class="dropdown-item d-flex align-items-center active" data-bs-theme-value="auto" aria-pressed="true">
+            <svg class="bi me-2 opacity-50" width="1em" height="1em"><use href="#circle-half"></use></svg>
+            Auto
+            <svg class="bi ms-auto d-none" width="1em" height="1em"><use href="#check2"></use></svg>
+          </button>
+        </li>
+      </ul>
+    </div>
 
     <div class="col-lg-8 mx-auto p-4 py-md-5">
       <main>
@@ -111,7 +161,7 @@
 
         <div class="timeline">
           <!-- Doktora -->
-          <div class="timeline-item Hukuk">
+          <div class="timeline-item egitim">
             <div class="d-flex align-items-center">
               <img src="gazi-logo.png" alt="Gazi Üniversitesi" class="univ-logo">
               <div class="univ-info">
@@ -124,7 +174,7 @@
           </div>
 
           <!-- Lisans 1 -->
-          <div class="timeline-item Sağlık">
+          <div class="timeline-item saglik">
             <div class="d-flex align-items-center">
               <img src="ataturk-logo.png" alt="Atatürk Üniversitesi" class="univ-logo">
               <div class="univ-info">
@@ -137,7 +187,7 @@
           </div>
 
           <!-- Yüksek Lisans -->
-          <div class="timeline-item Eğitim">
+          <div class="timeline-item egitim">
             <div class="d-flex align-items-center">
               <img src="anadolu-logo.png" alt="Anadolu Üniversitesi" class="univ-logo">
               <div class="univ-info">
@@ -150,7 +200,7 @@
           </div>
 
           <!-- Ön Lisans 1 -->
-          <div class="timeline-item Eğitim">
+          <div class="timeline-item egitim">
             <div class="d-flex align-items-center">
               <img src="anadolu-logo.png" alt="Anadolu Üniversitesi" class="univ-logo">
               <div class="univ-info">
@@ -166,17 +216,17 @@
         <!-- Courses Section -->
         <h2 class="sub-section-title">Courses</h2>
         <ul class="courses-list">
-          <li class="course-item">
+          <li class="course-item saglik">
             <a href="https://example.com/course1" target="_blank">Course 1: Title</a>
             <p>Institution: Harvard University</p>
             <p>Year: 2021</p>
           </li>
-          <li class="course-item">
+          <li class="course-item hukuk">
             <a href="https://example.com/course2" target="_blank">Course 2: Title</a>
             <p>Institution: MIT</p>
             <p>Year: 2020</p>
           </li>
-          <li class="course-item">
+          <li class="course-item egitim">
             <a href="https://example.com/course3" target="_blank">Course 3: Title</a>
             <p>Institution: Stanford University</p>
             <p>Year: 2019</p>
@@ -186,8 +236,8 @@
         <!-- Qualification Section -->
         <h2 class="sub-section-title">Qualification</h2>
         <ul class="qualification-list">
-          <li class="qualification-item">Qualification 1: Title and details</li>
-          <li class="qualification-item">Qualification 2: Title and details</li>
+          <li class="qualification-item saglik">Qualification 1: Title and details</li>
+          <li class="qualification-item hukuk">Qualification 2: Title and details</li>
         </ul>
 
       </main>
@@ -199,7 +249,7 @@
     <script>
       document.getElementById('filterSelect').addEventListener('change', function() {
         var filter = this.value;
-        var items = document.querySelectorAll('.timeline-item');
+        var items = document.querySelectorAll('.timeline-item, .course-item, .qualification-item');
 
         items.forEach(function(item) {
           if (filter === 'all') {
