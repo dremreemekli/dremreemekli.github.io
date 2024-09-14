@@ -32,33 +32,31 @@
         background-color: #007bff;
         border-radius: 50%;
       }
-      .timeline-content {
-        padding: 0.5rem;
-        background-color: #f8f9fa;
-        border-radius: 0.25rem;
-      }
       .univ-logo {
         width: 50px;
         height: auto;
         margin-right: 10px;
       }
 
-      /* Metin renklerini temaya göre değiştirmek için medya sorgusu */
+      /* Metin renklerini ve arka planları temaya göre değiştirmek için medya sorgusu */
       @media (prefers-color-scheme: dark) {
+        .timeline-content {
+          background-color: #1e1e1e; /* Siyah temada arka plan siyah */
+          color: #ffffff; /* Metin rengi beyaz */
+        }
         .timeline-content a {
-          color: #000000; /* Siyah temada siyah */
+          color: #000000; /* Siyah temada siyah linkler */
         }
       }
 
       @media (prefers-color-scheme: light) {
-        .timeline-content a {
-          color: #ffffff; /* Açık temada beyaz */
+        .timeline-content {
+          background-color: #ffffff; /* Beyaz temada arka plan beyaz */
+          color: #000000; /* Metin rengi siyah */
         }
-      }
-
-      /* Filtrelenen alanlar */
-      .hidden {
-        display: none;
+        .timeline-content a {
+          color: #ffffff; /* Beyaz temada beyaz linkler */
+        }
       }
     </style>
   </head>
