@@ -14,44 +14,30 @@
     
     <style>
       .timeline {
-        position: relative;
-        padding: 1rem 0;
-        list-style: none;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
       }
       .timeline-item {
-        position: relative;
+        width: 48%;
         margin-bottom: 2rem;
         display: flex;
-        align-items: center;
-        padding-left: 2rem;
+        flex-direction: column;
       }
       .timeline-icon {
-        position: relative;
-        display: inline-block;
-        width: 60px;
-        height: 60px;
+        width: 50px;
+        height: 50px;
         background-color: #f8f9fa;
         border-radius: 50%;
+        display: inline-block;
         overflow: hidden;
+        margin-right: 10px;
       }
       .univ-logo {
         width: 100%;
         height: auto;
         object-fit: contain;
       }
-
-      /* Logo arka planı temaya göre değiştirme */
-      @media (prefers-color-scheme: dark) {
-        .timeline-icon {
-          background-color: #ffffff; /* Siyah temada logo arka planı beyaz */
-        }
-      }
-      @media (prefers-color-scheme: light) {
-        .timeline-icon {
-          background-color: #000000; /* Beyaz temada logo arka planı siyah */
-        }
-      }
-
       .univ-info {
         margin-left: 15px;
       }
@@ -63,6 +49,23 @@
         font-size: 0.875rem;
         margin: 0;
         color: #6c757d;
+      }
+      .timeline-content {
+        display: flex;
+        align-items: center;
+        background-color: #f8f9fa;
+        padding: 1rem;
+        border-radius: 0.5rem;
+      }
+
+      @media (prefers-color-scheme: dark) {
+        .timeline-icon {
+          background-color: #ffffff;
+        }
+        .timeline-content {
+          background-color: #1e1e1e;
+          color: #ffffff;
+        }
       }
     </style>
   </head>
@@ -94,85 +97,73 @@
         <h1 class="text-body-emphasis">Educations</h1>
         <p>Here you can find a list of my educations and trainings.</p>
 
-        <div class="mb-4">
-          <label for="filterSelect" class="form-label">Filter:</label>
-          <select id="filterSelect" class="form-select">
-            <option value="all">Tüm Alanlar</option>
-            <option value="Medicine">Medicine</option>
-            <option value="Law">Law</option>
-            <option value="Education">Educaiton</option>
-          </select>
-        </div>
-
         <div class="timeline">
-          <!-- Hacettepe Üniversitesi -->
-          <div class="timeline-item Medicine">
-            <div class="timeline-icon">
-              <img src="hacettepe-logo.png" alt="Hacettepe Üniversitesi Amblemi" class="univ-logo">
-            </div>
-            <div class="univ-info">
-              <h3><a href="https://www.hacettepe.edu.tr/" target="_blank" class="text-decoration-none">Hacettepe Üniversitesi Tıp Fakültesi</a> (MD)</h3>
-              <p>Faculty of Medicine</p>
-              <p>Graduation Year: 2015</p>
-            </div>
-          </div>
-
-          <!-- Eskişehir Osmangazi Üniversitesi -->
-          <div class="timeline-item Medicine">
-            <div class="timeline-icon">
-              <img src="esogu-logo.png" alt="Eskişehir Osmangazi Üniversitesi Amblemi" class="univ-logo">
-            </div>
-            <div class="univ-info">
-              <h3><a href="https://www.ogu.edu.tr/" target="_blank" class="text-decoration-none">Eskişehir Osmangazi Üniversitesi</a> (Radyoloji)</h3>
-              <p>Mezuniyet Tarihi: 2015</p>
-              <p>Tez: "Knee MRI Analysis in Radiology"</p> <!-- Tez var -->
+          <!-- Doktora -->
+          <div class="timeline-item">
+            <div class="timeline-content d-flex align-items-center">
+              <div class="timeline-icon">
+                <img src="gazi-logo.png" alt="Gazi Üniversitesi" class="univ-logo">
+              </div>
+              <div class="univ-info">
+                <h3>Gazi Üniversitesi</h3>
+                <p>Sağlık Bilimleri Enstitüsü, Tıp Eğitimi</p>
+                <p>Tez: N/A</p>
+                <p>Graduation: 2023</p>
+              </div>
             </div>
           </div>
 
-          <!-- Gazi Üniversitesi -->
-          <div class="timeline-item Medicine">
-          <div class="timeline-item Education">
-            <div class="timeline-icon">
-              <img src="gazi-logo.png" alt="Gazi Üniversitesi Amblemi" class="univ-logo">
-            </div>
-            <div class="univ-info">
-              <h3><a href="https://www.gazi.edu.tr/" target="_blank" class="text-decoration-none">Gazi Üniversitesi</a> (Tıp Eğitimi PhD)</h3>
-              <p>Mezuniyet Tarihi: 2020</p>
+          <!-- Lisans 1 -->
+          <div class="timeline-item">
+            <div class="timeline-content d-flex align-items-center">
+              <div class="timeline-icon">
+                <img src="ataturk-logo.png" alt="Atatürk Üniversitesi" class="univ-logo">
+              </div>
+              <div class="univ-info">
+                <h3>Atatürk Üniversitesi</h3>
+                <p>Açıköğretim Fakültesi, Sağlık Yönetimi</p>
+                <p>Tez: N/A</p>
+                <p>Graduation: 2022</p>
+              </div>
             </div>
           </div>
 
-          <!-- Anadolu Üniversitesi -->
-          <div class="timeline-item Law">
-            <div class="timeline-icon">
-              <img src="anadolu-logo.png" alt="Anadolu Üniversitesi Amblemi" class="univ-logo">
-            </div>
-            <div class="univ-info">
-              <h3><a href="https://www.anadolu.edu.tr/" target="_blank" class="text-decoration-none">Anadolu Üniversitesi</a> (LLB)</h3>
-              <p>Mezuniyet Tarihi: 2017</p>
+          <!-- Yüksek Lisans -->
+          <div class="timeline-item">
+            <div class="timeline-content d-flex align-items-center">
+              <div class="timeline-icon">
+                <img src="anadolu-logo.png" alt="Anadolu Üniversitesi" class="univ-logo">
+              </div>
+              <div class="univ-info">
+                <h3>Anadolu Üniversitesi</h3>
+                <p>Eğitim Bilimleri Enstitüsü, Eğitim Teknolojileri</p>
+                <p>Tez: N/A</p>
+                <p>Graduation: 2022</p>
+              </div>
             </div>
           </div>
+
+          <!-- Ön Lisans 1 -->
+          <div class="timeline-item">
+            <div class="timeline-content d-flex align-items-center">
+              <div class="timeline-icon">
+                <img src="anadolu-logo.png" alt="Anadolu Üniversitesi" class="univ-logo">
+              </div>
+              <div class="univ-info">
+                <h3>Anadolu Üniversitesi</h3>
+                <p>Açıköğretim Fakültesi, Web Tasarımı Ve Kodlama</p>
+                <p>Tez: N/A</p>
+                <p>Graduation: 2020</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Diğer Eğitimler -->
+          <!-- Lisans 2, Ön Lisans 2, Tıpta Uzmanlık ve diğer eğitimleri burada devam ettirebilirsiniz -->
         </div>
       </main>
     </div>
 
     <script src="https://getbootstrap.com/docs/5.3/dist/js/bootstrap.bundle.min.js"></script>
-    
-    <!-- Filtreleme İşlevselliği -->
-    <script>
-      document.getElementById('filterSelect').addEventListener('change', function() {
-        var filter = this.value;
-        var items = document.querySelectorAll('.timeline-item');
-        
-        items.forEach(function(item) {
-          if (filter === 'all') {
-            item.classList.remove('hidden');
-          } else if (item.classList.contains(filter.toLowerCase())) {
-            item.classList.remove('hidden');
-          } else {
-            item.classList.add('hidden');
-          }
-        });
-      });
-    </script>
   </body>
 </html>
