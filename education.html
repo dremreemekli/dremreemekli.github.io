@@ -9,7 +9,7 @@
     <meta name="generator" content="Hugo 0.122.0">
     <title>Educations - Emre Emekli, MD, PhD</title>
 
-       <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@docsearch/css@3">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@docsearch/css@3">
     <link href="https://getbootstrap.com/docs/5.3/dist/css/bootstrap.min.css" rel="stylesheet">
 
     <style>
@@ -36,122 +36,45 @@
         box-shadow: inset 0 .5em 1.5em rgba(0, 0, 0, .1), inset 0 .125em .5em rgba(0, 0, 0, .15);
       }
 
-      .b-example-vr {
-        flex-shrink: 0;
-        width: 1.5rem;
-        height: 100vh;
+      .timeline {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 1rem;
       }
 
-      .bi {
-        vertical-align: -.125em;
-        fill: currentColor;
-      }
-
-      .nav-scroller {
-        position: relative;
-        z-index: 2;
-        height: 2.75rem;
-        overflow-y: hidden;
-      }
-
-      .nav-scroller .nav {
-        display: flex;
-        flex-wrap: nowrap;
-        padding-bottom: 1rem;
-        margin-top: -1px;
-        overflow-x: auto;
-        text-align: center;
-        white-space: nowrap;
-        -webkit-overflow-scrolling: touch;
-      }
-
-      .btn-bd-primary {
-        --bd-violet-bg: #712cf9;
-        --bd-violet-rgb: 112.520718, 44.062154, 249.437846;
-
-        --bs-btn-font-weight: 600;
-        --bs-btn-color: var(--bs-white);
-        --bs-btn-bg: var(--bd-violet-bg);
-        --bs-btn-border-color: var(--bd-violet-bg);
-        --bs-btn-hover-color: var(--bs-white);
-        --bs-btn-hover-bg: #6528e0;
-        --bs-btn-hover-border-color: #6528e0;
-        --bs-btn-focus-shadow-rgb: var(--bd-violet-rgb);
-        --bs-btn-active-color: var(--bs-btn-hover-color);
-        --bs-btn-active-bg: #5a23c8;
-        --bs-btn-active-border-color: #5a23c8;
-      }
-
-      .bd-mode-toggle {
-        z-index: 1500;
-      }
-
-      .bd-mode-toggle .dropdown-menu .active .bi {
-        display: block !important;
-      }
-
-      .navbar {
-        transition: background-color 0.3s, color 0.3s;
-      }
-
-      [data-bs-theme="dark"] .navbar {
-        background-color: #343a40;
-        color: #fff;
-      }
-
-      [data-bs-theme="light"] .navbar {
+      .timeline-item {
         background-color: #f8f9fa;
-        color: #000;
+        border-radius: 8px;
+        padding: 15px;
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
       }
 
-      /* Stil düzenlemeleri */
-      .publication-title {
-        font-weight: bold;
-        font-size: 1rem;
+      .univ-logo {
+        width: 50px;
+        margin-right: 15px;
       }
 
-      .publication-authors {
-        margin-left: 20px;
-        font-size: 0.9rem;
-        color: #888;
+      .univ-info {
+        flex-grow: 1;
       }
 
-      .publication-description {
-        margin-left: 40px;
-        font-size: 0.70rem;
-        color: #888;
+      .courses-list, .qualification-list {
+        list-style: none;
+        padding-left: 0;
       }
 
-      /* Konferans başlıkları */
-      .conference-title {
-        font-size: 3,5rem;
+      .course-item {
+        margin-bottom: 10px;
+      }
+
+      .qualification-item {
+        margin-bottom: 10px;
+      }
+
+      .sub-section-title {
         margin-top: 40px;
       }
-
-      .presentation-type {
-        font-size: 1,5rem;
-        margin-top: 20px;
-      }
-
-      .presentation-title {
-        font-weight: bold;
-        font-size: 1rem;
-      }
-
-      .presentation-authors {
-        margin-left: 60px;
-        font-size: 0.9rem;
-        margin-left: 20px;
-        color: #888;
-      }
-
-      .presentation-details {
-        margin-left: 40px;
-        font-size: 0.8rem;
-        color: #888;
-      }
     </style>
-   
   </head>
   <body>
     <nav class="navbar navbar-expand-lg">
@@ -167,48 +90,13 @@
             <li class="nav-item">
               <a class="nav-link active" aria-current="page" href="publications.html">Publications</a>
             </li>
-             <li class="nav-item">
+            <li class="nav-item">
               <a class="nav-link" href="thesis.html">Thesis</a> <!-- Yeni eklenen sekme -->
             </li>
           </ul>
         </div>
       </div>
     </nav>
-
-    <div class="dropdown position-fixed bottom-0 end-0 mb-3 me-3 bd-mode-toggle">
-      <button class="btn btn-bd-primary py-2 dropdown-toggle d-flex align-items-center"
-              id="bd-theme"
-              type="button"
-              aria-expanded="false"
-              data-bs-toggle="dropdown"
-              aria-label="Toggle theme (auto)">
-        <svg class="bi my-1 theme-icon-active" width="1em" height="1em"><use href="#circle-half"></use></svg>
-        <span class="visually-hidden" id="bd-theme-text">Toggle theme</span>
-      </button>
-      <ul class="dropdown-menu dropdown-menu-end shadow" aria-labelledby="bd-theme-text">
-        <li>
-          <button type="button" class="dropdown-item d-flex align-items-center" data-bs-theme-value="light" aria-pressed="false">
-            <svg class="bi me-2 opacity-50" width="1em" height="1em"><use href="#sun-fill"></use></svg>
-            Light
-            <svg class="bi ms-auto d-none" width="1em" height="1em"><use href="#check2"></use></svg>
-          </button>
-        </li>
-        <li>
-          <button type="button" class="dropdown-item d-flex align-items-center" data-bs-theme-value="dark" aria-pressed="false">
-            <svg class="bi me-2 opacity-50" width="1em" height="1em"><use href="#moon-stars-fill"></use></svg>
-            Dark
-            <svg class="bi ms-auto d-none" width="1em" height="1em"><use href="#check2"></use></svg>
-          </button>
-        </li>
-        <li>
-          <button type="button" class="dropdown-item d-flex align-items-center active" data-bs-theme-value="auto" aria-pressed="true">
-            <svg class="bi me-2 opacity-50" width="1em" height="1em"><use href="#circle-half"></use></svg>
-            Auto
-            <svg class="bi ms-auto d-none" width="1em" height="1em"><use href="#check2"></use></svg>
-          </button>
-        </li>
-      </ul>
-    </div>
 
     <div class="col-lg-8 mx-auto p-4 py-md-5">
       <main>
@@ -228,10 +116,8 @@
         <div class="timeline">
           <!-- Doktora -->
           <div class="timeline-item egitim">
-            <div class="timeline-content d-flex align-items-center">
-              <div class="timeline-icon">
-                <img src="gazi-logo.png" alt="Gazi Üniversitesi" class="univ-logo">
-              </div>
+            <div class="d-flex align-items-center">
+              <img src="gazi-logo.png" alt="Gazi Üniversitesi" class="univ-logo">
               <div class="univ-info">
                 <h3>Gazi Üniversitesi</h3>
                 <p>Sağlık Bilimleri Enstitüsü, Tıp Eğitimi</p>
@@ -243,10 +129,8 @@
 
           <!-- Lisans 1 -->
           <div class="timeline-item saglik">
-            <div class="timeline-content d-flex align-items-center">
-              <div class="timeline-icon">
-                <img src="ataturk-logo.png" alt="Atatürk Üniversitesi" class="univ-logo">
-              </div>
+            <div class="d-flex align-items-center">
+              <img src="ataturk-logo.png" alt="Atatürk Üniversitesi" class="univ-logo">
               <div class="univ-info">
                 <h3>Atatürk Üniversitesi</h3>
                 <p>Açıköğretim Fakültesi, Sağlık Yönetimi</p>
@@ -258,10 +142,8 @@
 
           <!-- Yüksek Lisans -->
           <div class="timeline-item egitim">
-            <div class="timeline-content d-flex align-items-center">
-              <div class="timeline-icon">
-                <img src="anadolu-logo.png" alt="Anadolu Üniversitesi" class="univ-logo">
-              </div>
+            <div class="d-flex align-items-center">
+              <img src="anadolu-logo.png" alt="Anadolu Üniversitesi" class="univ-logo">
               <div class="univ-info">
                 <h3>Anadolu Üniversitesi</h3>
                 <p>Eğitim Bilimleri Enstitüsü, Eğitim Teknolojileri</p>
@@ -273,10 +155,8 @@
 
           <!-- Ön Lisans 1 -->
           <div class="timeline-item egitim">
-            <div class="timeline-content d-flex align-items-center">
-              <div class="timeline-icon">
-                <img src="anadolu-logo.png" alt="Anadolu Üniversitesi" class="univ-logo">
-              </div>
+            <div class="d-flex align-items-center">
+              <img src="anadolu-logo.png" alt="Anadolu Üniversitesi" class="univ-logo">
               <div class="univ-info">
                 <h3>Anadolu Üniversitesi</h3>
                 <p>Açıköğretim Fakültesi, Web Tasarımı Ve Kodlama</p>
@@ -285,22 +165,35 @@
               </div>
             </div>
           </div>
-
-          <!-- Courses -->
-          <h2 class="sub-section-title">Courses</h2>
-          <ul class="courses-list">
-            <li class="course-item">Course 1: Title and details</li>
-            <li class="course-item">Course 2: Title and details</li>
-            <li class="course-item">Course 3: Title and details</li>
-          </ul>
-
-          <!-- Qualification -->
-          <h2 class="sub-section-title">Qualification</h2>
-          <ul class="qualification-list">
-            <li class="qualification-item">Qualification 1: Title and details</li>
-            <li class="qualification-item">Qualification 2: Title and details</li>
-          </ul>
         </div>
+
+        <!-- Courses Section -->
+        <h2 class="sub-section-title">Courses</h2>
+        <ul class="courses-list">
+          <li class="course-item">
+            <a href="https://example.com/course1" target="_blank">Course 1: Title</a>
+            <p>Institution: Harvard University</p>
+            <p>Year: 2021</p>
+          </li>
+          <li class="course-item">
+            <a href="https://example.com/course2" target="_blank">Course 2: Title</a>
+            <p>Institution: MIT</p>
+            <p>Year: 2020</p>
+          </li>
+          <li class="course-item">
+            <a href="https://example.com/course3" target="_blank">Course 3: Title</a>
+            <p>Institution: Stanford University</p>
+            <p>Year: 2019</p>
+          </li>
+        </ul>
+
+        <!-- Qualification Section -->
+        <h2 class="sub-section-title">Qualification</h2>
+        <ul class="qualification-list">
+          <li class="qualification-item">Qualification 1: Title and details</li>
+          <li class="qualification-item">Qualification 2: Title and details</li>
+        </ul>
+
       </main>
     </div>
 
