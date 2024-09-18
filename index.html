@@ -270,30 +270,53 @@
       </footer>
     </div>
     
-    <!-- Otomatik tema değişikliği için script -->
+    <!-- Otomatik tema değişikliği ve kullanıcı tercihi için script -->
     <script>
       const themeToggleBtn = document.getElementById('bd-theme');
       const themeText = document.getElementById('bd-theme-text');
       const systemTheme = window.matchMedia('(prefers-color-scheme: dark)');
 
-      // Tarayıcının sistem tercihini kontrol et
-      if (systemTheme.matches) {
-        document.documentElement.setAttribute('data-bs-theme', 'dark');
-        themeText.innerText = 'Dark';
-      } else {
-        document.documentElement.setAttribute('data-bs-theme', 'light');
-        themeText.innerText = 'Light';
-      }
+      // localStorage'daki tema bilgisini kontrol et
+      const savedTheme = localStorage.getItem('selectedTheme');
 
-      // Kullanıcı tema tercihini değiştirdiğinde
-      systemTheme.addEventListener('change', (e) => {
-        if (e.matches) {
+      if (savedTheme) {
+        // Kaydedilen tema varsa, onu uygula
+        document.documentElement.setAttribute('data-bs-theme', savedTheme);
+        themeText.innerText = savedTheme.charAt(0).toUpperCase() + savedTheme.slice(1);
+      } else {
+        // Kaydedilen tema yoksa, sistem tercihine göre tema uygula
+        if (systemTheme.matches) {
           document.documentElement.setAttribute('data-bs-theme', 'dark');
           themeText.innerText = 'Dark';
         } else {
           document.documentElement.setAttribute('data-bs-theme', 'light');
           themeText.innerText = 'Light';
         }
+      }
+
+      // Kullanıcı tema tercihini değiştirdiğinde
+      systemTheme.addEventListener('change', (e) => {
+        if (!localStorage.getItem('selectedTheme')) { // Eğer kullanıcı manuel olarak tema seçmemişse sistem temasını uygula
+          if (e.matches) {
+            document.documentElement.setAttribute('data-bs-theme', 'dark');
+            themeText.innerText = 'Dark';
+          } else {
+            document.documentElement.setAttribute('data-bs-theme', 'light');
+            themeText.innerText = 'Light';
+          }
+        }
+      });
+
+      // Tema seçildiğinde, bunu kaydet
+      document.querySelectorAll('.dropdown-item').forEach(item => {
+        item.addEventListener('click', function () {
+          const selectedTheme = this.getAttribute('data-bs-theme-value');
+          document.documentElement.setAttribute('data-bs-theme', selectedTheme);
+          themeText.innerText = selectedTheme.charAt(0).toUpperCase() + selectedTheme.slice(1);
+          
+          // Kullanıcı tercihini localStorage'a kaydet
+          localStorage.setItem('selectedTheme', selectedTheme);
+        });
       });
     </script>
     <script src="https://getbootstrap.com/docs/5.3/dist/js/bootstrap.bundle.min.js"></script>
