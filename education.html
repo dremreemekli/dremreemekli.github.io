@@ -370,4 +370,31 @@
         <h2 class="sub-section-title">Qualification</h2>
         <ul class="qualification-list">
           <li class="qualification-item saglik">
-            <a href="https://mymedicalcredentials.org/credential/f60fff92-6aae-4826-aa40-e88
+            <a href="https://mymedicalcredentials.org/credential/f60fff92-6aae-4826-aa40-e88eea7ae843/" target="_blank">European Diploma in Radiology</a>
+            <p>Year: 2024</p>
+          </li>
+        </ul>
+        </main>
+    </div>
+
+    <script src="https://getbootstrap.com/docs/5.3/dist/js/bootstrap.bundle.min.js"></script>
+
+    <!-- Filtreleme İşlevselliği -->
+    <script>
+      document.getElementById('filterSelect').addEventListener('change', function() {
+        var filter = this.value;
+        var items = document.querySelectorAll('.timeline-item, .course-item, .qualification-item');
+
+        items.forEach(function(item) {
+          if (filter === 'all') {
+            item.classList.remove('hidden');
+          } else if (item.classList.contains(filter.toLowerCase())) {
+            item.classList.remove('hidden');
+          } else {
+            item.classList.add('hidden');
+          }
+        });
+      });
+    </script>
+  </body>
+</html>
