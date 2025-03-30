@@ -33,7 +33,6 @@
       .btn-bd-primary {
         --bd-violet-bg: #712cf9;
         --bd-violet-rgb: 112.520718, 44.062154, 249.437846;
-
         --bs-btn-font-weight: 600;
         --bs-btn-color: var(--bs-white);
         --bs-btn-bg: var(--bd-violet-bg);
@@ -52,62 +51,94 @@
       .bd-mode-toggle .dropdown-menu .active .bi {
         display: block !important;
       }
+
+      .pdf-desktop {
+        display: block;
+      }
+
+      .pdf-mobile {
+        display: none;
+      }
+
+      @media (max-width: 768px) {
+        .pdf-desktop {
+          display: none;
+        }
+        .pdf-mobile {
+          display: block;
+        }
+      }
     </style>
   </head>
   <body>
-<nav class="navbar navbar-expand-lg">
-  <div class="container-fluid">
-    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-    </button>
-    <div class="collapse navbar-collapse" id="navbarNav">
-      <ul class="navbar-nav">
-        <li class="nav-item">
-          <a class="nav-link" href="/index.html">Profile</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="/education.html">Education</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="/publications.html">Publications</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="/thesis.html">Thesis</a>
-        </li>
-      </ul>
-    </div>
-  </div>
-</nav>
+    <nav class="navbar navbar-expand-lg">
+      <div class="container-fluid">
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+          aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav">
+            <li class="nav-item">
+              <a class="nav-link" href="/index.html">Profile</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="/education.html">Education</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="/publications.html">Publications</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="/thesis.html">Thesis</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
     <div class="dropdown position-fixed bottom-0 end-0 mb-3 me-3 bd-mode-toggle">
-      <button class="btn btn-bd-primary py-2 dropdown-toggle d-flex align-items-center"
-              id="bd-theme"
-              type="button"
-              aria-expanded="false"
-              data-bs-toggle="dropdown"
-              aria-label="Toggle theme (auto)">
-        <svg class="bi my-1 theme-icon-active" width="1em" height="1em"><use href="#circle-half"></use></svg>
+      <button class="btn btn-bd-primary py-2 dropdown-toggle d-flex align-items-center" id="bd-theme" type="button"
+        aria-expanded="false" data-bs-toggle="dropdown" aria-label="Toggle theme (auto)">
+        <svg class="bi my-1 theme-icon-active" width="1em" height="1em">
+          <use href="#circle-half"></use>
+        </svg>
         <span class="visually-hidden" id="bd-theme-text">Toggle theme</span>
       </button>
       <ul class="dropdown-menu dropdown-menu-end shadow" aria-labelledby="bd-theme-text">
         <li>
-          <button type="button" class="dropdown-item d-flex align-items-center" data-bs-theme-value="light" aria-pressed="false">
-            <svg class="bi me-2 opacity-50" width="1em" height="1em"><use href="#sun-fill"></use></svg>
+          <button type="button" class="dropdown-item d-flex align-items-center" data-bs-theme-value="light"
+            aria-pressed="false">
+            <svg class="bi me-2 opacity-50" width="1em" height="1em">
+              <use href="#sun-fill"></use>
+            </svg>
             Light
-            <svg class="bi ms-auto d-none" width="1em" height="1em"><use href="#check2"></use></svg>
+            <svg class="bi ms-auto d-none" width="1em" height="1em">
+              <use href="#check2"></use>
+            </svg>
           </button>
         </li>
         <li>
-          <button type="button" class="dropdown-item d-flex align-items-center" data-bs-theme-value="dark" aria-pressed="false">
-            <svg class="bi me-2 opacity-50" width="1em" height="1em"><use href="#moon-stars-fill"></use></svg>
+          <button type="button" class="dropdown-item d-flex align-items-center" data-bs-theme-value="dark"
+            aria-pressed="false">
+            <svg class="bi me-2 opacity-50" width="1em" height="1em">
+              <use href="#moon-stars-fill"></use>
+            </svg>
             Dark
-            <svg class="bi ms-auto d-none" width="1em" height="1em"><use href="#check2"></use></svg>
+            <svg class="bi ms-auto d-none" width="1em" height="1em">
+              <use href="#check2"></use>
+            </svg>
           </button>
         </li>
         <li>
-          <button type="button" class="dropdown-item d-flex align-items-center active" data-bs-theme-value="auto" aria-pressed="true">
-            <svg class="bi me-2 opacity-50" width="1em" height="1em"><use href="#circle-half"></use></svg>
+          <button type="button" class="dropdown-item d-flex align-items-center active" data-bs-theme-value="auto"
+            aria-pressed="true">
+            <svg class="bi me-2 opacity-50" width="1em" height="1em">
+              <use href="#circle-half"></use>
+            </svg>
             Auto
-            <svg class="bi ms-auto d-none" width="1em" height="1em"><use href="#check2"></use></svg>
+            <svg class="bi ms-auto d-none" width="1em" height="1em">
+              <use href="#check2"></use>
+            </svg>
           </button>
         </li>
       </ul>
@@ -122,7 +153,24 @@
         <p>This study sheds light on how large language models like ChatGPT, Copilot, and Bard perform when answering patients' questions about radiation exposure during pregnancy. Since patients often seek health information online, it is critical to ensure that the information they find is not only accurate but also readable and understandable. The results highlight the potential of AI in health communication while emphasizing the importance of simplicity and clarity for patient education. This research serves as a guide for improving AI-generated content in sensitive medical contexts.</p>
 
         <h2>Read the Full Article (PDF)</h2>
-        <iframe src="../pregnancyLLM.pdf"></iframe>
+
+        <!-- Desktop PDF -->
+        <div class="pdf-desktop">
+          <iframe src="../pregnancyLLM.pdf"></iframe>
+        </div>
+
+        <!-- Mobile PDF Link -->
+        <div class="pdf-mobile text-center mt-3">
+          <a href="../pregnancyLLM.pdf" target="_blank" rel="noopener noreferrer" class="btn btn-outline-secondary btn-sm">
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+              class="bi bi-file-earmark-pdf" viewBox="0 0 16 16">
+              <path
+                d="M5.5 6.5a.5.5 0 0 0-.5.5v1.563a.5.5 0 0 0 .5.5h.328a.5.5 0 0 0 .47-.333L6.75 7.5H7v1h1V6H7v1h-.25l-.452-1.13A.5.5 0 0 0 5.5 6.5zm4.5 1a.5.5 0 0 0-.5.5v1h1V8a.5.5 0 0 0-.5-.5z" />
+              <path
+                d="M14 4.5V14a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1h5.5L14 4.5zM8 1.5v3a1 1 0 0 0 1 1h3v8.5a.5.5 0 0 0 .5.5h-9a.5.5 0 0 0-.5.5v-13a.5.5 0 0 0-.5-.5H8z" />
+            </svg> View PDF
+          </a>
+        </div>
 
         <h2 class="mt-5">Citation</h2>
         <p>Mert, B., & Emekli, E. (2024). Assessing the Accuracy, Readability and Understandability of Websites, ChatGPT, Copilot, and Bard Answers on the Radiation during Pregnancy. <em>Journal of Health Informatics</em>, [online ahead of print].</p>
