@@ -979,36 +979,40 @@ This study investigates the gender and age-related differences in the anatomy of
         Emre Emekli &middot; &copy; 2024
       </footer>
     </div>
+    <!-- THEME TOGGLE -->
+    <div class="dropdown position-fixed bottom-0 end-0 mb-3 me-3 bd-mode-toggle">
+      <button class="btn btn-bd-primary py-2 dropdown-toggle d-flex align-items-center"
+              id="bd-theme"
+              type="button"
+              aria-expanded="false"
+              data-bs-toggle="dropdown"
+              aria-label="Toggle theme (auto)">
+        <svg class="bi my-1 theme-icon-active" width="1em" height="1em"><use href="#circle-half"></use></svg>
+        <span class="visually-hidden" id="bd-theme-text">Toggle theme</span>
+      </button>
+      <ul class="dropdown-menu dropdown-menu-end shadow" aria-labelledby="bd-theme-text">
+        <li><button type="button" class="dropdown-item" data-bs-theme-value="light">Light</button></li>
+        <li><button type="button" class="dropdown-item" data-bs-theme-value="dark">Dark</button></li>
+        <li><button type="button" class="dropdown-item active" data-bs-theme-value="auto">Auto</button></li>
+      </ul>
+    </div>
+
+    <!-- JS -->
     <script src="https://getbootstrap.com/docs/5.3/dist/js/bootstrap.bundle.min.js"></script>
- <script src="https://getbootstrap.com/docs/5.3/dist/js/bootstrap.bundle.min.js"></script>
 
-<script>
-  document.getElementById('filterSelect').addEventListener('change', function() {
-    var selected = this.value;
-
-    // Tüm bölümleri al
-    var sections = [
-      document.getElementById('articles-section'),
-      document.getElementById('books-section'),
-      document.getElementById('conference-section'),
-      document.getElementById('posters-section')
-    ];
-
-    // Hepsini gizle
-    sections.forEach(function(sec) {
-      if (sec) sec.style.display = 'none';
-    });
-
-    // Seçime göre göster
-    if (selected === 'all') {
-      sections.forEach(function(sec) {
-        if (sec) sec.style.display = '';
+    <!-- FILTER SCRIPT -->
+    <script>
+      document.getElementById('filterSelect').addEventListener('change', function() {
+        var selected = this.value;
+        var sections = document.querySelectorAll('.publication-section');
+        sections.forEach(function(section) {
+          if (selected === 'all' || section.id.startsWith(selected)) {
+            section.classList.remove('hidden');
+          } else {
+            section.classList.add('hidden');
+          }
+        });
       });
-    } else {
-      var target = document.getElementById(selected + '-section');
-      if (target) target.style.display = '';
-    }
-  });
-</script>
-</body>
+    </script>
+  </body>
 </html>
