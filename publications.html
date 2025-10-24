@@ -1128,5 +1128,21 @@ This study investigates the gender and age-related differences in the anatomy of
       </footer>
     </div>
     <script src="https://getbootstrap.com/docs/5.3/dist/js/bootstrap.bundle.min.js"></script>
-  </body>
+ <script src="https://getbootstrap.com/docs/5.3/dist/js/bootstrap.bundle.min.js"></script>
+
+<script>
+  document.getElementById('filterSelect').addEventListener('change', function() {
+    var filter = this.value;
+    var items = document.querySelectorAll('.pub-item'); // filtrelenecek elemanlar
+
+    items.forEach(function(item) {
+      if (filter === 'all' || item.classList.contains(filter)) {
+        item.classList.remove('hidden');
+      } else {
+        item.classList.add('hidden');
+      }
+    });
+  });
+</script>
+</body>
 </html>
