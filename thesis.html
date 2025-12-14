@@ -14,15 +14,14 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@docsearch/css@3">
     <link href="https://getbootstrap.com/docs/5.3/dist/css/bootstrap.min.css" rel="stylesheet">
 
-    <!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-WFZNTCNLRP"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-WFZNTCNLRP"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
 
-  gtag('config', 'G-WFZNTCNLRP');
-</script>
+      gtag('config', 'G-WFZNTCNLRP');
+    </script>
     
     <style>
       .bd-placeholder-img {
@@ -104,6 +103,8 @@
 
       .navbar {
         transition: background-color 0.3s, color 0.3s;
+        background-color: #f8f9fa;
+        color: #000;
       }
 
       [data-bs-theme="dark"] .navbar {
@@ -111,31 +112,67 @@
         color: #fff;
       }
 
-      [data-bs-theme="light"] .navbar {
-        background-color: #f8f9fa;
-        color: #000;
-      }
-
       .thesis-title {
         font-weight: bold;
         font-size: 1.25rem;
         margin-top: 20px;
+        line-height: 1.4;
       }
 
       .thesis-authors {
         margin-left: 20px;
         font-size: 1rem;
-        color: #888;
+        color: #6c757d; /* Bootstrap secondary color */
+        margin-bottom: 0.5rem;
+      }
+
+      /* Dark mode için yazar rengi düzeltmesi */
+      [data-bs-theme="dark"] .thesis-authors {
+        color: #adb5bd;
       }
 
       .thesis-abstract {
         margin-left: 40px;
         font-size: 0.9rem;
-        color: #777;
+        color: #495057; /* Koyu gri */
         margin-top: 10px;
+        text-align: justify;
+      }
+
+      /* Dark mode için abstract rengi düzeltmesi */
+      [data-bs-theme="dark"] .thesis-abstract {
+        color: #ced4da; /* Açık gri */
+      }
+      
+      ul {
+        list-style-type: none; /* Liste işaretlerini kaldırdım, daha temiz görünüm için */
+        padding-left: 0;
+      }
+      
+      li {
+        margin-bottom: 3rem; /* Tez maddeleri arası boşluk */
+        border-bottom: 1px solid #e9ecef; /* Ayırıcı çizgi */
+        padding-bottom: 2rem;
+      }
+
+      [data-bs-theme="dark"] li {
+        border-bottom-color: #495057;
+      }
+
+      /* --- ÇOKLU DİL İÇİN EKLEME --- */
+      html[lang="en"] .lang-tr {
+        display: none !important;
+      }
+      html[lang="tr"] .lang-en {
+        display: none !important;
+      }
+      
+      .lang-switch-btn {
+        cursor: pointer;
+        font-weight: bold;
       }
     </style>
-   
+    
   </head>
   <body>
     <nav class="navbar navbar-expand-lg">
@@ -144,20 +181,38 @@
           <span class="navbar-toggler-icon"></span>
         </button>
         <div class="collapse navbar-collapse" id="navbarNav">
-          <ul class="navbar-nav">
+          <ul class="navbar-nav me-auto">
             <li class="nav-item">
-            <a class="nav-link active" aria-current="page" href="index.html">Profile</a>
+                <a class="nav-link" href="index.html">
+                    <span class="lang-en">Profile</span>
+                    <span class="lang-tr">Profil</span>
+                </a>
             </li>
             <li class="nav-item">
-            <a class="nav-link" href="education.html">Education</a>
+                <a class="nav-link" href="education.html">
+                    <span class="lang-en">Education</span>
+                    <span class="lang-tr">Eğitim</span>
+                </a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="publications.html">Publications</a>
+                <a class="nav-link" href="publications.html">
+                    <span class="lang-en">Publications</span>
+                    <span class="lang-tr">Yayınlar</span>
+                </a>
             </li>
              <li class="nav-item">
-              <a class="nav-link" href="thesis.html">Thesis</a>
+                <a class="nav-link active" aria-current="page" href="thesis.html">
+                    <span class="lang-en">Thesis</span>
+                    <span class="lang-tr">Tez</span>
+                </a>
             </li>
-            </li>
+          </ul>
+           <ul class="navbar-nav">
+             <li class="nav-item">
+                <button class="btn btn-outline-secondary btn-sm lang-switch-btn" onclick="toggleLanguage()">
+                  TR | EN
+                </button>
+             </li>
           </ul>
         </div>
       </div>
@@ -197,49 +252,141 @@
         </li>
       </ul>
     </div>
+
     <div class="col-lg-8 mx-auto p-4 py-md-5">
       <main>
-        <h1 class="text-body-emphasis">Thesis</h1>
-        <p>Here you can find a list of my thesis work. Click on the titles to download the PDF files.</p>
+        <h1 class="text-body-emphasis">
+            <span class="lang-en">Thesis</span>
+            <span class="lang-tr">Tezler</span>
+        </h1>
+        <p>
+            <span class="lang-en">Here you can find a list of my thesis work. Click on the titles to download the PDF files or view details.</span>
+            <span class="lang-tr">Burada tez çalışmalarımın bir listesini bulabilirsiniz. Detayları görüntülemek veya indirmek için başlıklara tıklayınız.</span>
+        </p>
+        
         <ul>
           <li>
             <p class="thesis-title">
-              <a href="https://tez.yok.gov.tr/UlusalTezMerkezi/TezGoster?key=1pwTzRXnomYf6jwqVORfUUZxfk3NGrp1HPbAeOeK0Yg-Qm0hZWLbaXzZ3sNkRNKC" target="_blank" rel="noopener noreferrer">Tıp Fakültesi Öğrencilerinin Kayıt Tutma Becerilerinin Geliştirilmesi Üzerine Bir Çalışma</a>
+              <span class="lang-tr">
+                  <a href="https://tez.yok.gov.tr/UlusalTezMerkezi/TezGoster?key=1pwTzRXnomYf6jwqVORfUUZxfk3NGrp1HPbAeOeK0Yg-Qm0hZWLbaXzZ3sNkRNKC" target="_blank" rel="noopener noreferrer">
+                    Tıp Fakültesi Öğrencilerinin Kayıt Tutma Becerilerinin Geliştirilmesi Üzerine Bir Çalışma
+                  </a>
+              </span>
+              <span class="lang-en">
+                  <a href="https://tez.yok.gov.tr/UlusalTezMerkezi/TezGoster?key=1pwTzRXnomYf6jwqVORfUUZxfk3NGrp1HPbAeOeK0Yg-Qm0hZWLbaXzZ3sNkRNKC" target="_blank" rel="noopener noreferrer">
+                    A Study on Improving the Record-Keeping Skills of Medical Students
+                  </a>
+              </span>
             </p>
-            <p class="thesis-title">
-              <a href="https://tez.yok.gov.tr/UlusalTezMerkezi/TezGoster?key=1pwTzRXnomYf6jwqVORfUUZxfk3NGrp1HPbAeOeK0Yg-Qm0hZWLbaXzZ3sNkRNKC" target="_blank" rel="noopener noreferrer">A Study on Improving the Record-Keeping Skills of Medical Students</a>
+
+            <p class="thesis-authors">
+                <span class="lang-tr">Yazar: Emre Emekli, Danışman: Doç. Dr. Özlem Coşkun</span>
+                <span class="lang-en">Author: Emre Emekli, Advisor: Assoc. Prof. Özlem Coşkun</span>
             </p>
-            <p class="thesis-authors">Yazar: Emre Emekli, Danışman: Doç. Dr. Özlem Coşkun</p>
-            <p class="thesis-abstract">
+
+            <p class="thesis-abstract lang-tr">
               <strong>Özet:</strong> Klinik kayıtların yeterli kalitede tutulmadığına dair literatürde önemli miktarda araştırma bulunmaktadır. Bu çalışmada tasarım tabanlı araştırma metodolojisi ile Gazi Üniversitesi Tıp Fakültesindeki klinik kayıtlarla ilgili eğitim ihtiyacı belirlenmeye bunun sonucunda bir eğitim programı geliştirilerek, eğitim müdahalesi uygulanması hedeflenmiştir. Çalışmada 10 öğretim üyesi ile yarı-yapılandırılmış form aracılığıyla görüşmeler gerçekleştirilmiş, son sınıf öğrencilerine anket aracılığıyla ulaşılmıştır. Katılımcıların önemli bir kısmı klinik kayıt tutma eğitiminin formal olarak verilmediği ve verilmesinin faydalı olacağını belirtmiştir. Ayrıca küçük grup şeklinde, uygulama ağırlıklı, klinik dönem öncesi öğrencilere verilecek eğitimin daha faydalı olacağı yönünde fikirler öne çıkmıştır. Kayıtların yazımı, formatı, içeriği ile ilgili ve hukuki olarak kayıt tutmanın önemi ile ilgili konu başlıkları belirlenmiştir. İhtiyaç analizi sonucu geliştirilen 14 haftalık ders programı pilot uygulama sonrası üçüncü sınıf öğrencilerine uygulanmıştır. Katılımcı başarıları ön test- son test şeklinde değerlendirilmiş ve güncel müfredatı alan dördüncü sınıf öğrencileri kontrol grubu olarak seçilmiştir. Eğitim programı öncesi puanları ile kontrol grubu puanları karşılaştırıldığında kontrol grubunun, son test puanlarında ise müdahale grubunun daha yüksek skorlara sahip olduğu saptanmıştır. Eğitim müdahale grubunda ise test puanlarına istatistiksel olarak anlamlı yükseliş tespit edilmiştir. Bu çalışmada fakültemizdeki klinik kayıtlar konusundaki eksiklik ve ihtiyaçlar belirlenmiş, buna uygun eğitim programı oluşturulmuş ve klinik öncesi dönem öğrencilerinde etkililiği saptanmıştır.
             </p>
-            <p class="thesis-abstract">
+            <p class="thesis-abstract lang-en">
               <strong>Abstract:</strong> There is abundant literature indicating that clinical records are not maintained at a sufficient quality. In this study, a design-based research methodology was employed to identify the training needs related to clinical records at Gazi University Faculty of Medicine. Subsequently, an educational program was developed, and implented as an educational intervention. Semi-structured interviews were conducted with 10 faculty members, and a survey was administered to final-year students to determine training needs. A significant portion of the participants mentioned that formal training in clinical record-keeping was not provided, and they believed it would be beneficial. Additionally, ideas emerged that training in small groups, with an emphasis on practical application, would be more beneficial for students before their clinical rotations. Topics related to the writing, formatting, content, and legal aspects of record-keeping, as well as the importance of legal documentation, were identified. Following the needs analysis, a 14-week course program was developed and implemented with third-year students after a pilot application. Participant achievements were evaluated through pre-tests and post-tests, with fourth-year students in the current curriculum serving as the control group. The scores of the control group were higher compared to pre-test scores of the intervention group but lower in post-test scores. This study identified deficiencies and needs in clinical records at faculty of medicine, developed an appropriate training program, and demonstrated its effectiveness in pre-clinical students.
             </p>
           </li>
+          
           <li>
             <p class="thesis-title">
-              <a href="https://tez.yok.gov.tr/UlusalTezMerkezi/TezGoster?key=Eb5EkakJlp3olBdo_wNEGRZaftMBshYew-9lPMsf6hVCeiiQpARE_WZKjTGRAgqv" target="_blank" rel="noopener noreferrer">Transrektal Ultrasonografi Eşliğinde Prostat Biyopsisi Sonucu Gleason Skoru 6 Olan Hastalarda Multiparametrik Prostat Manyetik Rezonans Görüntüleme Bulguları</a>
+               <span class="lang-tr">
+                  <a href="https://tez.yok.gov.tr/UlusalTezMerkezi/TezGoster?key=Eb5EkakJlp3olBdo_wNEGRZaftMBshYew-9lPMsf6hVCeiiQpARE_WZKjTGRAgqv" target="_blank" rel="noopener noreferrer">
+                    Transrektal Ultrasonografi Eşliğinde Prostat Biyopsisi Sonucu Gleason Skoru 6 Olan Hastalarda Multiparametrik Prostat Manyetik Rezonans Görüntüleme Bulguları
+                  </a>
+               </span>
+               <span class="lang-en">
+                  <a href="https://tez.yok.gov.tr/UlusalTezMerkezi/TezGoster?key=Eb5EkakJlp3olBdo_wNEGRZaftMBshYew-9lPMsf6hVCeiiQpARE_WZKjTGRAgqv" target="_blank" rel="noopener noreferrer">
+                    Multiparametric Prostate Magnetic Resonance Imaging Findings in Patients with Transrectal Ultrasonography-Guided Prostate Biopsy Gleason Score 6
+                  </a>
+               </span>
             </p>
-            <p class="thesis-title">
-              <a href="https://tez.yok.gov.tr/UlusalTezMerkezi/TezGoster?key=Eb5EkakJlp3olBdo_wNEGRZaftMBshYew-9lPMsf6hVCeiiQpARE_WZKjTGRAgqv" rel="noopener noreferrer">Multiparametric Prostate Magnetic Resonance Imaging Findings in Patients with Transrectal Ultrasonography-Guided Prostate Biopsy Gleason Score 6</a>
+
+            <p class="thesis-authors">
+                <span class="lang-tr">Yazar: Emre Emekli, Danışman: Dr. Öğr. Üyesi Elif Gündoğdu</span>
+                <span class="lang-en">Author: Emre Emekli, Advisor: Asst. Prof. Elif Gündoğdu</span>
             </p>
-            <p class="thesis-authors">Yazar: Emre Emekli, Danışman: Dr. Öğr. Üyesi Elif Gündoğdu</p>
-            <p class="thesis-abstract">
+
+            <p class="thesis-abstract lang-tr">
               <strong>Özet:</strong> TRUS biyopsi sonucu Gleason skoru 6 olan hastalarda klinik anlamlı kanser bulunma ve yetersiz tedavi alma olasılığı bulunmaktadır. mpMRG bu hasta grubunda KOAK ihtimali yüksek lezyonların tespitinde kullanılabilir. Bu nedenle çalışmamızın amacı TRUS biyopsi sonucunda Gleason skoru 6 olan hastaların prostat mpMRG bulgularını değerlendirmektir. Bu amaçla Ocak 2015-Ocak 2019 tarihleri arasında 3T MRG ünitesinde klinik olarak PKa şüphesi olan ve TRUS biyopsi sonucu Gleason skoru 3+3 olup tanı amaçlı mpMRG çekilen 80 hasta çalışmaya dahil edildi. Hastaların görüntüleri klinik bilgilerine kör 2 radyolog tarafından PIRADSv2.1 klavuzuna göre skorlandırıldı. PI-RADS skoruna göre hastalar KOAK ihtimali yüksek (PI-RADS 4- 5) ve KOAK ihtimali düşük (PI-RADS 2-3) olarak ikiye ayrıldı. Her iki grup yaş, PSA, PSA dansitesi ve prostat hacimleri açısından değerlendirildi. Hastalar klinik bilgilerine göre RP yapılan, RT ile tedavi edilen, aktif izlem, bekleyerek izlem ve takibine ulaşılamayanlar olarak gruplandırıldı. Hasta gruplarının mpMRG sonuçları değerlendirildi. 80 hastanın yaş aralığı 49-78 (64 ± 7,09), PSA değerleri 0,73-55,27 ng/ml(8,86±7,75), PSA dansitesi 0,016-0,934 ng/ml/cc(0,158 ± 0,133) ve prostat hacimleri 20,27-190,79 cm³ (64,26 ± 32,42) olarak bulundu.%33,8’sinde PI-RADS 2-3 %66,2’ünde PI-RADS 4-5 lezyon saptandı. Her iki grup arasında yaş,PSA,PSA dansitesi ve tümör yüzdesi arasında anlamlı fark vardı. 80 hastanın 15’i RT, 28’i RP ile tedavi edilmiş, 21 hasta aktif izleme, 3 hasta bekleyerek izleme alınmış ve 11 hasta takiplerine gelmemiştir. RP yapılan grupta patoloji sonuçları altın standart olarak alındığında mpMRG’nin sensitivitesi %94,74, spesifitesi %100 ve doğruluk oranı %96,3 olarak hesaplandı. Sonuç olarak PIRADS 4-5 skorları, KOAK lezyonların tanısında yüksek duyarlılık ve negatif öngörü değerine sahiptir. mpMRG başlangıçta düşük riskli değerlendirilen hastalarda biyopsiye ek olarak karar mekanizmasında rol oynayabilecek güvenilir noninvaziv tanı yöntemidir.
             </p>
-            <p class="thesis-abstract">
+            <p class="thesis-abstract lang-en">
               <strong>Abstract:</strong> Patients with TRUS biopsy Gleason score 6 may have clinically significant PCa so they are likely to receive inadequate treatment. mpMRI can be used to detect lesions with a high probability of clinically significant PCa in this group. Therefore, the aim of this study was to evaluate the prostate mpMRI findings of patients with Gleason score 6 after TRUS biopsy. Between January 2015 and January 2019, 80 patients with clinical suspicion of PCa and TRUS biopsy result with a Gleason score of 3 + 3 were included in the study. The images of the patients were examined by 2 radiologists, who blind to clinical informations, and scored according to the PIRADSv2.1 guideline. According to the PI-RADS score, patients were divided into two groups as high probability of clinical suspicion PCa (PI-RADS 4-5) and low probability of clinical suspicion PCa (PI-RADS 2-3). Both groups were evaluated for age, PSA, PSA density and prostate volumes. Also patients were grouped according to their clinical information as RP, RT, active surveilence, watchful waiting and inaccesible clinical informatin. mpMRI results of the patient groups were evaluated. The age range of 80 patients were 49-78 (64 ± 7,09), PSA values were 0,73-55,27 ng / ml (8.86 ± 7.75), PSA density were 0.016-0.934 ng / ml / cc (0,158 ± 0,133) and prostate volumes were found to be 20,27-190,79 cm³ (64,26 ± 32,42). 33,8% of lesions were PI-RADS 2-3 and 66,2% of lesions were PI-RADS 4- 5. There were a significant difference between the two groups in terms of age, PSA, PSA density and tumor percentage.15 patients were treated with RT,28 with RP, 21 with active surveillance and 3 with watchful waiting. When the pathology results were taken as the gold standard in the RP group, the sensitivity, specificity and accuracy of mpMRI were calculated as 94.74%, 100% and 96.3%, respectively. As a result, PIRADS 4-5 scores have high sensitivity and negative predictive value in the diagnosis of clinically significant PCa. mpMRI is a reliable noninvasive diagnostic method that may play a role in decision-making in addition to biopsy in patients initially evaluated at low risk.
             </p>
           </li>
-          <!-- Daha fazla tez ekleyebilirsiniz -->
         </ul>
       </main>
       <footer class="pt-5 my-5 text-body-secondary border-top">
         Emre Emekli &middot; &copy; 2024
       </footer>
     </div>
+    
+    <script>
+      function toggleLanguage() {
+        const htmlTag = document.documentElement;
+        const currentLang = htmlTag.getAttribute('lang');
+        const newLang = currentLang === 'en' ? 'tr' : 'en';
+        
+        htmlTag.setAttribute('lang', newLang);
+        localStorage.setItem('selectedLang', newLang);
+      }
+
+      document.addEventListener('DOMContentLoaded', () => {
+        const savedLang = localStorage.getItem('selectedLang');
+        if (savedLang) {
+          document.documentElement.setAttribute('lang', savedLang);
+        } else {
+           document.documentElement.setAttribute('lang', 'en');
+        }
+      });
+    </script>
+
+    <script>
+      const themeToggleBtn = document.getElementById('bd-theme');
+      const themeText = document.getElementById('bd-theme-text');
+      const systemTheme = window.matchMedia('(prefers-color-scheme: dark)');
+
+      const savedTheme = localStorage.getItem('selectedTheme');
+
+      if (savedTheme) {
+        document.documentElement.setAttribute('data-bs-theme', savedTheme);
+        themeText.innerText = savedTheme.charAt(0).toUpperCase() + savedTheme.slice(1);
+      } else {
+        if (systemTheme.matches) {
+          document.documentElement.setAttribute('data-bs-theme', 'dark');
+          themeText.innerText = 'Dark';
+        } else {
+          document.documentElement.setAttribute('data-bs-theme', 'light');
+          themeText.innerText = 'Light';
+        }
+      }
+
+      systemTheme.addEventListener('change', (e) => {
+        if (!localStorage.getItem('selectedTheme')) {
+          if (e.matches) {
+            document.documentElement.setAttribute('data-bs-theme', 'dark');
+            themeText.innerText = 'Dark';
+          } else {
+            document.documentElement.setAttribute('data-bs-theme', 'light');
+            themeText.innerText = 'Light';
+          }
+        }
+      });
+
+      document.querySelectorAll('.dropdown-item').forEach(item => {
+        item.addEventListener('click', function () {
+          const selectedTheme = this.getAttribute('data-bs-theme-value');
+          document.documentElement.setAttribute('data-bs-theme', selectedTheme);
+          themeText.innerText = selectedTheme.charAt(0).toUpperCase() + selectedTheme.slice(1);
+          localStorage.setItem('selectedTheme', selectedTheme);
+        });
+      });
+    </script>
+    
     <script src="https://getbootstrap.com/docs/5.3/dist/js/bootstrap.bundle.min.js"></script>
   </body>
 </html>
-
