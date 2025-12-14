@@ -122,11 +122,10 @@
       .thesis-authors {
         margin-left: 20px;
         font-size: 1rem;
-        color: #6c757d; /* Bootstrap secondary color */
+        color: #6c757d;
         margin-bottom: 0.5rem;
       }
 
-      /* Dark mode için yazar rengi düzeltmesi */
       [data-bs-theme="dark"] .thesis-authors {
         color: #adb5bd;
       }
@@ -134,29 +133,34 @@
       .thesis-abstract {
         margin-left: 40px;
         font-size: 0.9rem;
-        color: #495057; /* Koyu gri */
+        color: #495057;
         margin-top: 10px;
         text-align: justify;
       }
 
-      /* Dark mode için abstract rengi düzeltmesi */
       [data-bs-theme="dark"] .thesis-abstract {
-        color: #ced4da; /* Açık gri */
+        color: #ced4da;
       }
       
-      ul {
-        list-style-type: none; /* Liste işaretlerini kaldırdım, daha temiz görünüm için */
+      /* DÜZELTİLEN KISIM: Sadece 'thesis-list' sınıfına sahip listelere çizgi ekle */
+      .thesis-list {
+        list-style-type: none;
         padding-left: 0;
       }
       
-      li {
-        margin-bottom: 3rem; /* Tez maddeleri arası boşluk */
-        border-bottom: 1px solid #e9ecef; /* Ayırıcı çizgi */
+      .thesis-list > li {
+        margin-bottom: 3rem;
+        border-bottom: 1px solid #e9ecef; /* Çizgi burada */
         padding-bottom: 2rem;
       }
+      
+      /* Son maddede çizgi olmasın */
+      .thesis-list > li:last-child {
+        border-bottom: none; 
+      }
 
-      [data-bs-theme="dark"] li {
-        border-bottom-color: #495057;
+      [data-bs-theme="dark"] .thesis-list > li {
+        border-bottom-color: #495057; /* Dark mod çizgi rengi */
       }
 
       /* --- ÇOKLU DİL İÇİN EKLEME --- */
@@ -264,7 +268,7 @@
             <span class="lang-tr">Burada tez çalışmalarımın bir listesini bulabilirsiniz. Detayları görüntülemek veya indirmek için başlıklara tıklayınız.</span>
         </p>
         
-        <ul>
+        <ul class="thesis-list">
           <li>
             <p class="thesis-title">
               <span class="lang-tr">
